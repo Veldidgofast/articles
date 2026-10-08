@@ -273,9 +273,9 @@
 
       <div class="field">
         <label for="opinion" id="opinionLab"></label>
-        <textarea id="opinion" placeholder="" maxlength="900" dir="auto"></textarea>
+        <textarea id="opinion" placeholder="" dir="auto"></textarea>
         <div class="meta-row">
-          <span id="count">0 / 900</span>
+          <span id="count">0</span>
           <span id="hint"></span>
         </div>
       </div>
@@ -550,7 +550,7 @@ function flash(text, good){
 function validate(){ sendBtn.disabled = bodyEl.value.trim().length === 0; }
 
 bodyEl.addEventListener("input", () => {
-  $("count").textContent = bodyEl.value.length + " / 900";
+  $("count").textContent = bodyEl.value.length;
   validate();
 });
 nameEl.addEventListener("input", () => store.set("reader_name", nameEl.value.trim()));
